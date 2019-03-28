@@ -29,12 +29,16 @@
 
 ## 删除链表中重复的节点
 
-### 1.存储链表中元素出现的次数
+### 方法1.存储链表中元素出现的次数
 
 - 1.用一个map存储每个节点出现的次数
 - 2.删除出现次数大于1的节点
 
 此方法删除节点时可以使用上面总结的办法。
+
+时间复杂度：O(n) 
+
+空间复杂度：O(n)
 
 ```js
     function deleteDuplication(pHead) {
@@ -78,8 +82,39 @@
 ```
 
 
-### 2.链接法
+### 方法2.重新比较连接数组
 
+
+链表是排好顺序的，所以重复元素都会相邻出现
+       递归链表：
+- 1.当前节点或当前节点的next为空，返回该节点
+- 2.当前节点是重复节点：找到后面第一个不重复的节点
+- 3.当前节点不重复：将当前的节点的next赋值为下一个不重复的节点
+
+```js
+    function deleteDuplication(pHead) {
+      if (!pHead || !pHead.next) {
+        return pHead;
+      } else if (pHead.val === pHead.next.val) {
+        let tempNode = pHead.next;
+        while (tempNode && pHead.val === tempNode.val) {
+          tempNode = tempNode.next;
+        }
+        return deleteDuplication(tempNode);
+      } else {
+        pHead.next = deleteDuplication(pHead.next);
+        return pHead;
+      }
+    }
+```
+
+
+时间复杂度：O(n) 
+
+空间复杂度：O(1)
 
 
 ## 考察点
+
+- 链表
+- 考虑问题的全面性
