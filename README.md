@@ -35,3 +35,20 @@
 ## 查找
 
 - [二维数组查找](/查找/二维数组查找.md)
+
+# 关于
+
+您还可以在下面的地方关注我，共同学习进步。
+
+
+<a href="https://juejin.im/user/5bea27965188250edf4ad8b7" >
+  <img src="./img/juejin.png"  width="220px" height="110px" /> 
+</a>
+
+<a href="https://segmentfault.com/u/conardli" class="item" >
+  <img src="./img/segmentfault.jpg" width="150px" height="150px" />
+</a>
+
+<a href="https://mp.weixin.qq.com/s/dYZEHTgqvxGV7mL99JuxRQ" class="item" >
+  <img src="./img/gongzhonghao.png" width="150"  height="150" />
+</a>
