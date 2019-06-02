@@ -19,6 +19,10 @@
 
 # 解题分类
 
+## JavaScript专题
+
+- [手动实现call、apply、bind](/JavaScript/手动实现call、apply、bind.md)⭐⭐
+
 ## 二叉树
 
 - [二叉树的中序遍历](/数据结构分类/二叉树/二叉树的中序遍历.md)⭐⭐
