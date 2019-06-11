@@ -7,14 +7,13 @@
 - 4.调用函数后即删除该`Symbol`属性
 
 ```js
-    Function.prototype.myCall = function (context) {
+    Function.prototype.myCall = function (context, ...args) {
       if (typeof this !== 'function') {
         return undefined; // 用于防止 Function.prototype.myCall() 直接调用
       }
       context = context || window;
       const fn = Symbol();
       context[fn] = this;
-      const args = [...arguments].slice(1);
       const result = context[fn](...args);
       delete context[fn];
       return result;
@@ -26,7 +25,7 @@
 `apply`实现类似`call`，参数为数组
 
 ```js
-    Function.prototype.myApply = function (context) {
+    Function.prototype.myApply = function (context, args) {
       if (typeof this !== 'function') {
         return undefined; // 用于防止 Function.prototype.myCall() 直接调用
       }
@@ -34,14 +33,15 @@
       const fn = Symbol();
       context[fn] = this;
       let result;
-      if (arguments[1] instanceof Array) {
-        result = context[fn](...arguments[1]);
+      if (Array.isArray(args)) {
+        result = context[fn](...args);
       } else {
         result = context[fn]();
       }
       delete context[fn];
       return result;
     }
+
 ```
 
 ## 模拟实现bind
@@ -66,4 +66,41 @@
         return _this.apply(context, args.concat(...arguments))
       }
     }
+```
+
+
+## 扩展
+
+获取函数中的参数：
+
+```js
+    // 获取argument对象 类数组对象 不能调用数组方法
+    function test1() {
+      console.log('获取argument对象 类数组对象 不能调用数组方法', arguments);
+    }
+
+    // 获取参数数组  可以调用数组方法
+    function test2(...args) {
+      console.log('获取参数数组  可以调用数组方法', args);
+    }
+
+    // 获取除第一个参数的剩余参数数组
+    function test3(first, ...args) {
+      console.log('获取argument对象 类数组对象 不能调用数组方法', args);
+    }
+
+    // 透传参数
+    function test4(first, ...args) {
+      fn(...args);
+      fn(...arguments);
+    }
+
+    function fn() {
+      console.log('透传', ...arguments);
+    }
+
+    test1(1, 2, 3);
+    test2(1, 2, 3);
+    test3(1, 2, 3);
+    test4(1, 2, 3);
 ```
