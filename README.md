@@ -22,6 +22,7 @@
 ## JavaScript专题
 
 - [手动实现call、apply、bind](/JavaScript/手动实现call、apply、bind.md)⭐⭐
+- [EventEmitter](/JavaScript/EventEmitter.md)⭐⭐
 
 ## 二叉树
 
