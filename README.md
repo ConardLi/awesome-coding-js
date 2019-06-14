@@ -25,6 +25,7 @@
 - [EventEmitter](/JavaScript/EventEmitter.md)
 - [防抖](/JavaScript/防抖.md)
 - [节流](/JavaScript/节流.md)
+- [浅拷贝和深拷贝](/JavaScript/浅拷贝和深拷贝.md)
 
 ## 二叉树
 
