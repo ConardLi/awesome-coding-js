@@ -26,6 +26,7 @@
 - [防抖](/JavaScript/防抖.md)
 - [节流](/JavaScript/节流.md)
 - [浅拷贝和深拷贝](/JavaScript/浅拷贝和深拷贝.md)
+- [数组去重、扁平、最值](/JavaScript/数组去重、扁平、最值.md)
 
 ## 二叉树
 
