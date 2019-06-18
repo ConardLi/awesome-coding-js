@@ -28,6 +28,7 @@
 - [浅拷贝和深拷贝](/JavaScript/浅拷贝和深拷贝.md)
 - [数组去重、扁平、最值](/JavaScript/数组去重、扁平、最值.md)
 - [函数柯里化](/JavaScript/函数柯里化.md)
+- [手动实现JSONP](/JavaScript/手动实现JSONP.md)
 
 ## 二叉树
 
