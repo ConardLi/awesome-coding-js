@@ -28,6 +28,7 @@
 - [函数柯里化](/JavaScript/函数柯里化.md)
 - [手动实现JSONP](/JavaScript/手动实现JSONP.md)
 - [模拟实现promise](/JavaScript/模拟实现promise.md)
+- [手动实现ES5继承](/JavaScript/手动实现ES5继承.md)
 
 ## 排序
 
