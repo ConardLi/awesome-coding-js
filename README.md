@@ -31,6 +31,7 @@
 - [手动实现ES5继承](/JavaScript/手动实现ES5继承.md)
 - [手动实现instanceof](/JavaScript/手动实现instanceof.md)
 - [基于Promise的ajax封装](/JavaScript/基于Promise的ajax封装.md)
+- [单例模式](/JavaScript/单例模式.md)
 
 ## 排序
 
