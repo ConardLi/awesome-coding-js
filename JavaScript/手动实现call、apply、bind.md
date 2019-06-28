@@ -7,8 +7,8 @@
 - 4.调用函数后即删除该`Symbol`属性
 
 ```js
-    Function.prototype.myCall = function (context, ...args) {
-      if (typeof this !== 'function') {
+    Function.prototype.myCall = function (context = window, ...args) {
+      if (this === Function.prototype) {
         return undefined; // 用于防止 Function.prototype.myCall() 直接调用
       }
       context = context || window;
@@ -25,11 +25,10 @@
 `apply`实现类似`call`，参数为数组
 
 ```js
-    Function.prototype.myApply = function (context, args) {
-      if (typeof this !== 'function') {
+    Function.prototype.myApply = function (context = window, args) {
+      if (this === Function.prototype) {
         return undefined; // 用于防止 Function.prototype.myCall() 直接调用
       }
-      context = context || window;
       const fn = Symbol();
       context[fn] = this;
       let result;
@@ -52,18 +51,17 @@
 - 3.如果不是，使用`apply`，将`context`和处理好的参数传入
 
 ```js
-    Function.prototype.myBind = function (context) {
-      if (typeof this !== 'function') {
+    Function.prototype.myBind = function (context,...args1) {
+      if (this === Function.prototype) {
         throw new TypeError('Error')
       }
       const _this = this
-      const args = [...arguments].slice(1)
-      return function F() {
+      return function F(...args2) {
         // 判断是否用于构造函数
         if (this instanceof F) {
-          return new _this(...args, ...arguments)
+          return new _this(...args1, ...args2)
         }
-        return _this.apply(context, args.concat(...arguments))
+        return _this.apply(context, args1.concat(args2))
       }
     }
 ```
