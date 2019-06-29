@@ -34,6 +34,7 @@
 - [基于Promise的ajax封装](/JavaScript/基于Promise的ajax封装.md)
 - [单例模式](/JavaScript/单例模式.md)
 - [异步循环打印](/JavaScript/异步循环打印.md)
+- [图片懒加载](/JavaScript/图片懒加载.md)
 
 ## 排序
 
