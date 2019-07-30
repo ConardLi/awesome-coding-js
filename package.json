@@ -1,0 +1,25 @@
+{
+  "name": "awesome-coding-js",
+  "version": "1.0.0",
+  "description": "> 写代码 = 数据结构 + 算法 + ...",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConardLi/awesome-coding-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ConardLi/awesome-coding-js/issues"
+  },
+  "homepage": "https://github.com/ConardLi/awesome-coding-js#readme"
+}
