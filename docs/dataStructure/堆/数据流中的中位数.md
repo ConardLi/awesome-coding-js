@@ -1,0 +1,117 @@
+---
+{
+  "title": "数据流中的中位数",
+}
+---
+## 题目
+
+如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。
+
+如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。我们使用`Insert()`方法读取数据流，使用`GetMedian()`方法获取当前读取数据的中位数。
+
+## 思路
+
+1.维护一个大顶堆，一个小顶堆，数据总数：
+- 小顶堆里的值全大于大顶堆里的；
+- 2个堆个数的差值小于等于1
+    
+
+2.当插入数字后数据总数为奇数时：使小顶堆个数比大顶堆多1；当插入数字后数据总数为偶数时，使大顶堆个数跟小顶堆个数一样。
+     
+
+3.当总数字个数为奇数时，中位数就是小顶堆堆头；当总数字个数为偶数时，中位数数就是2个堆堆顶平均数。
+
+
+## 代码
+
+```js
+    const maxHeap = new Heap('max');
+    const minHeap = new Heap('min');
+    let count = 0;
+    function Insert(num) {
+      count++;
+      if (count % 2 === 1) {
+        maxHeap.add(num);
+        minHeap.add(maxHeap.pop());
+      } else {
+        minHeap.add(num);
+        maxHeap.add(minHeap.pop());
+      }
+    }
+    function GetMedian() {
+      if (count % 2 === 1) {
+        return minHeap.value[0];
+      } else {
+        return (minHeap.value[0] + maxHeap.value[0]) / 2
+      }
+    }
+
+    function Heap(type = 'min') {
+      this.type = type;
+      this.value = [];
+    }
+
+    Heap.prototype.create = function () {
+      const length = this.value.length;
+      for (let i = Math.floor((length / 2) - 1); i >= 0; i--) {
+        this.ajust(i, length);
+      }
+    }
+
+    Heap.prototype.ajust = function (index, length) {
+      const array = this.value;
+      for (let i = 2 * index + 1; i < length; i = 2 * i + 1) {
+        if (i + 1 < length) {
+          if ((this.type === 'max' && array[i + 1] > array[i]) ||
+            (this.type === 'min' && array[i + 1] < array[i])) {
+            i++;
+          }
+        }
+        if ((this.type === 'max' && array[index] < [array[i]]) ||
+          (this.type === 'min' && array[index] > [array[i]])) {
+          [array[index], array[i]] = [array[i], array[index]];
+          index = i;
+        } else {
+          break;
+        }
+      }
+    }
+
+    Heap.prototype.add = function (element) {
+      const array = this.value;
+      array.push(element);
+      if (array.length > 1) {
+        let index = array.length - 1;
+        let target = Math.floor((index - 1) / 2);
+        while (target >= 0) {
+          if ((this.type === 'min' && array[index] < array[target]) ||
+            (this.type === 'max' && array[index] > array[target])) {
+            [array[index], array[target]] = [array[target], array[index]]
+            index = target;
+            target = Math.floor((index - 1) / 2);
+          } else {
+            break;
+          }
+        }
+      }
+    }
+
+    Heap.prototype.pop = function () {
+      const array = this.value;
+      let result = null;
+      if (array.length > 1) {
+        result = array[0];
+        array[0] = array.pop();
+        this.ajust(0, array.length);
+      } else if (array.length === 1) {
+        return array.pop();
+      }
+      return result;
+    }
+```
+
+
+## 考察点
+
+- 堆
+- 二叉树
