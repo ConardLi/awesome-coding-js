@@ -36,14 +36,6 @@ module.exports = {
                     ]
                 },
                 {
-                    title: '堆',
-                    children: [
-                        '/dataStructure/堆/堆的基本操作',
-                        '/dataStructure/堆/数据流中的中位数',
-                        '/dataStructure/堆/最小的k个数',
-                    ]
-                },
-                {
                     title: '链表',
                     children: [
                         '/dataStructure/链表/从尾到头打印链表',
@@ -55,6 +47,34 @@ module.exports = {
                         '/dataStructure/链表/两个链表的第一个公共节点',
                         '/dataStructure/链表/圈圈中最后剩下的数字',
                         '/dataStructure/链表/删除链表中的节点or重复的节点',
+                    ]
+                },
+                {
+                    title: '数组',
+                    children: [
+                        '/dataStructure/数组/把数组排成最小的数',
+                        '/dataStructure/数组/第一个只出现一次的字符',
+                        '/dataStructure/数组/调整数组顺序使奇数位于偶数前面',
+                        '/dataStructure/数组/构建乘积数组',
+                        '/dataStructure/数组/和为S的连续正整数序列',
+                        '/dataStructure/数组/和为S的两个数字',
+                        '/dataStructure/数组/连续子数组的最大和',
+                        '/dataStructure/数组/两数之和',
+                        '/dataStructure/数组/扑克牌顺子',
+                        '/dataStructure/数组/三数之和',
+                        '/dataStructure/数组/数组中出现次数超过数组长度一半的数字',
+                        '/dataStructure/数组/数组中的逆序对',
+                        '/dataStructure/数组/顺时针打印矩阵',
+                        '/dataStructure/数组/四数之和',
+                        '/dataStructure/数组/在排序数组中查找数字',
+                    ]
+                },
+                {
+                    title: '堆',
+                    children: [
+                        '/dataStructure/堆/堆的基本操作',
+                        '/dataStructure/堆/数据流中的中位数',
+                        '/dataStructure/堆/最小的k个数',
                     ]
                 },
             ]
