@@ -8,10 +8,30 @@ module.exports = {
         nav: [
             { text: '数据结构分类', link: '/dataStructure/' },
             { text: '算法分类', link: '/algorithm/' },
+            { text: 'JavaScript', link: '/JavaScript/' },
             { text: '博客', link: 'http://www.conardli.top/blog/article/' },
             { text: 'github', link: 'https://github.com/ConardLi' },
         ],
         sidebar: {
+            '/JavaScript/': [
+                '/JavaScript/',
+                '/JavaScript/手动实现call、apply、bind',
+                '/JavaScript/EventEmitter',
+                '/JavaScript/防抖',
+                '/JavaScript/节流',
+                '/JavaScript/浅拷贝和深拷贝',
+                '/JavaScript/数组去重、扁平、最值',
+                '/JavaScript/数组乱序-洗牌算法',
+                '/JavaScript/函数柯里化',
+                '/JavaScript/手动实现JSONP',
+                '/JavaScript/模拟实现promise',
+                '/JavaScript/手动实现ES5继承',
+                '/JavaScript/手动实现instanceof',
+                '/JavaScript/基于Promise的ajax封装',
+                '/JavaScript/单例模式',
+                '/JavaScript/异步循环打印',
+                '/JavaScript/图片懒加载',
+            ],
             '/algorithm/': [
                 '/algorithm/',
                 {
