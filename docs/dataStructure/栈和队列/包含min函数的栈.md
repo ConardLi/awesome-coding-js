@@ -20,7 +20,8 @@
 
 以数据[3,4,2,7,9,0]为例，让这组数字依次如栈，则栈和其对应的最小值栈如下：
 
-![](../../dist/img/mainstack.png)
+<img :src="$withBase('/mainstack.png')" alt="foo">
+
 
 ## 代码
 
