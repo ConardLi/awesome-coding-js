@@ -7,10 +7,73 @@ module.exports = {
         lastUpdated: 'Last Updated',
         nav: [
             { text: '数据结构分类', link: '/dataStructure/' },
+            { text: '算法分类', link: '/algorithm/' },
             { text: '博客', link: 'http://www.conardli.top/blog/article/' },
             { text: 'github', link: 'https://github.com/ConardLi' },
         ],
         sidebar: {
+            '/algorithm/': [
+                '/algorithm/',
+                {
+                    title: '查找',
+                    children: [
+                        '/algorithm/查找/二维数组查找',
+                        '/algorithm/查找/旋转数组的最小数字',
+                        '/algorithm/查找/在排序数组中查找数字',
+                    ]
+                },
+                {
+                    title: '递归和循环',
+                    children: [
+                        '/algorithm/递归和循环/斐波拉契数列',
+                        '/algorithm/递归和循环/跳台阶',
+                        '/algorithm/递归和循环/变态跳台阶',
+                        '/algorithm/递归和循环/矩形覆盖',
+                    ]
+                },
+                {
+                    title: '分治',
+                    children: [
+                        '/algorithm/分治/数组中的逆序对',
+                    ]
+                },
+                {
+                    title: '回溯算法',
+                    children: [
+                        '/algorithm/回溯算法/二叉树中和为某一值的路径',
+                        '/algorithm/回溯算法/字符串的排列',
+                        '/algorithm/回溯算法/和为sum的n个数',
+                        '/algorithm/回溯算法/矩阵中的路径',
+                        '/algorithm/回溯算法/机器人的运动范围',
+                        '/algorithm/回溯算法/N皇后问题',
+                        '/algorithm/回溯算法/N皇后问题2',
+                    ]
+                },
+                {
+                    title: '排序',
+                    children: [
+                        '/algorithm/排序/插入排序',
+                        '/algorithm/排序/堆排序',
+                        '/algorithm/排序/归并排序',
+                        '/algorithm/排序/快速排序',
+                        '/algorithm/排序/冒泡排序',
+                        '/algorithm/排序/选择排序',
+                    ]
+                },
+                {
+                    title: '数学运算',
+                    children: [
+                        '/algorithm/数学运算/1+2+3+...+n',
+                        '/algorithm/数学运算/不用加减乘除做加法',
+                        '/algorithm/数学运算/丑数',
+                        '/algorithm/数学运算/二进制中1的个数',
+                        '/algorithm/数学运算/数值的整数次方',
+                        '/algorithm/数学运算/数组中只出现一次的数字',
+                        '/algorithm/数学运算/整数中1出现的次数',
+                        '/algorithm/数学运算/字符串转换成整数',
+                    ]
+                },
+            ],
             '/dataStructure/': [
                 '/dataStructure/',
                 {
