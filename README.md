@@ -8,6 +8,12 @@
 
 练好数据结构和算法，非一日之功💪。欢迎`Star`✨或`Watch`👀我们共同进步。
 
+为了更好的阅读体验可以异步到：http://www.conardli.top/docs/ 阅读。
+
+<a href="https://segmentfault.com/u/conardli" class="item" >
+  <img src="./dist/img/logo.png" width="550px"  />
+</a>
+
 - ⭐⭐：入门
 - ⭐⭐⭐：进阶
 
