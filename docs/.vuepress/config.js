@@ -77,6 +77,15 @@ module.exports = {
                         '/dataStructure/堆/最小的k个数',
                     ]
                 },
+                {
+                    title: '栈和队列',
+                    children: [
+                        '/dataStructure/栈和队列/包含min函数的栈',
+                        '/dataStructure/栈和队列/滑动窗口的最大值',
+                        '/dataStructure/栈和队列/用两个栈实现队列',
+                        '/dataStructure/栈和队列/栈的压入弹出序列',
+                    ]
+                },
             ]
         }
     }
