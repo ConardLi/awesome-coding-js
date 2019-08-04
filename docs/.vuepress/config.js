@@ -86,6 +86,17 @@ module.exports = {
                         '/dataStructure/栈和队列/栈的压入弹出序列',
                     ]
                 },
+                {
+                    title: '字符串',
+                    children: [
+                        '/dataStructure/字符串/表示数值的字符串',
+                        '/dataStructure/字符串/替换空格',
+                        '/dataStructure/字符串/正则表达式匹配',
+                        '/dataStructure/字符串/字符串的排列',
+                        '/dataStructure/字符串/字符串翻转',
+                        '/dataStructure/字符串/字符流中第一个不重复的字符',
+                    ]
+                },
             ]
         }
     }
