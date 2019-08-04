@@ -2,7 +2,7 @@
 home: true
 heroImage: ./logo.jpg
 actionText: 开始阅读 →
-actionLink: /zh/guide/
+actionLink: /dataStructure/
 features:
 - title: 分类详解
   details: 分数据结构和算法两大部分，并且又对大类进行了详细划分。
