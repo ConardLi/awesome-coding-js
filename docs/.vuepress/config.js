@@ -99,6 +99,7 @@ module.exports = {
                 {
                     title: '二叉树',
                     children: [
+                        '/dataStructure/二叉树/二叉树',
                         '/dataStructure/二叉树/二叉树的基本操作',
                         '/dataStructure/二叉树/二叉树的中序遍历',
                         '/dataStructure/二叉树/二叉树的前序遍历',
@@ -121,6 +122,7 @@ module.exports = {
                 {
                     title: '链表',
                     children: [
+                        '/dataStructure/链表/链表',
                         '/dataStructure/链表/从尾到头打印链表',
                         '/dataStructure/链表/反转链表',
                         '/dataStructure/链表/复杂链表的复制',
@@ -135,6 +137,7 @@ module.exports = {
                 {
                     title: '数组',
                     children: [
+                        '/dataStructure/数组/数组',
                         '/dataStructure/数组/把数组排成最小的数',
                         '/dataStructure/数组/第一个只出现一次的字符',
                         '/dataStructure/数组/调整数组顺序使奇数位于偶数前面',
@@ -155,14 +158,22 @@ module.exports = {
                 {
                     title: '堆',
                     children: [
+                        '/dataStructure/堆/堆',
                         '/dataStructure/堆/堆的基本操作',
                         '/dataStructure/堆/数据流中的中位数',
                         '/dataStructure/堆/最小的k个数',
                     ]
                 },
                 {
+                    title: '哈希表',
+                    children: [
+                        '/dataStructure/哈希表/哈希表',
+                    ]
+                },
+                {
                     title: '栈和队列',
                     children: [
+                        '/dataStructure/栈和队列/栈和队列',
                         '/dataStructure/栈和队列/包含min函数的栈',
                         '/dataStructure/栈和队列/滑动窗口的最大值',
                         '/dataStructure/栈和队列/用两个栈实现队列',
