@@ -37,14 +37,22 @@ module.exports = {
                 {
                     title: '查找',
                     children: [
+                        '/algorithm/查找/查找',
                         '/algorithm/查找/二维数组查找',
                         '/algorithm/查找/旋转数组的最小数字',
                         '/algorithm/查找/在排序数组中查找数字',
                     ]
                 },
                 {
+                    title: 'DFS和BFS',
+                    children: [
+                        '/algorithm/DFS和BFS/DFS和BFS',
+                    ]
+                },
+                {
                     title: '递归和循环',
                     children: [
+                        '/algorithm/递归和循环/递归',
                         '/algorithm/递归和循环/斐波拉契数列',
                         '/algorithm/递归和循环/跳台阶',
                         '/algorithm/递归和循环/变态跳台阶',
@@ -60,6 +68,7 @@ module.exports = {
                 {
                     title: '回溯算法',
                     children: [
+                        '/algorithm/回溯算法/回溯算法',
                         '/algorithm/回溯算法/二叉树中和为某一值的路径',
                         '/algorithm/回溯算法/字符串的排列',
                         '/algorithm/回溯算法/和为sum的n个数',
@@ -93,6 +102,18 @@ module.exports = {
                         '/algorithm/数学运算/数组中只出现一次的数字',
                         '/algorithm/数学运算/整数中1出现的次数',
                         '/algorithm/数学运算/字符串转换成整数',
+                    ]
+                },
+                {
+                    title: '动态规划',
+                    children: [
+                        '/algorithm/动态规划/动态规划',
+                    ]
+                },
+                {
+                    title: '贪心算法',
+                    children: [
+                        '/algorithm/贪心算法/贪心算法',
                     ]
                 },
             ],
