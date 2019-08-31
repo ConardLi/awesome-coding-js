@@ -72,6 +72,8 @@ module.exports = {
                 {
                     title: '排序',
                     children: [
+                        '/algorithm/排序/复杂度',
+                        '/algorithm/排序/排序',
                         '/algorithm/排序/插入排序',
                         '/algorithm/排序/堆排序',
                         '/algorithm/排序/归并排序',
