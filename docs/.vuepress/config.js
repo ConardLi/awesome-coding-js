@@ -108,6 +108,7 @@ module.exports = {
                     title: '动态规划',
                     children: [
                         '/algorithm/动态规划/动态规划',
+                        '/algorithm/动态规划/最小路径和',
                     ]
                 },
                 {
