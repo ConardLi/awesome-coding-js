@@ -115,6 +115,7 @@ module.exports = {
                     title: '贪心算法',
                     children: [
                         '/algorithm/贪心算法/贪心算法',
+                        '/algorithm/贪心算法/分发饼干',
                     ]
                 },
             ],
