@@ -264,7 +264,7 @@ MyPromise.prototype.finally = function(fn) {
 `Promise.resolve`用来生成一个直接处于`FULFILLED`状态的Promise。
 
 ```js
-MyPromise.reject = function(value) {
+MyPromise.resolve = function(value) {
   return new MyPromise((resolve, reject) => {
     resolve(value);
   });
@@ -290,7 +290,7 @@ MyPromise.reject = function(reason) {
 
 ```js
     MyPromise.all = function (promises) {
-      return new Promise((resolve, reject) => {
+      return new MyPromise((resolve, reject) => {
         if (promises.length === 0) {
           resolve([]);
         } else {
@@ -320,7 +320,7 @@ MyPromise.reject = function(reason) {
 
 ```js
     MyPromise.race = function (promises) {
-      return new Promise((resolve, reject) => {
+      return new MyPromise((resolve, reject) => {
         if (promises.length === 0) {
           resolve();
         } else {
