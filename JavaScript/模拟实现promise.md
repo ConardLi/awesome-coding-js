@@ -88,7 +88,7 @@
           onFulfilled(this.value);
           break;
         case REJECTED:
-          onFulfilled(this.value);
+          onRejected(this.reason);
           break;
         case PENDING:
           this.onFulfilledCallbacks.push(() => {
