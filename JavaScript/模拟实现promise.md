@@ -3,7 +3,7 @@
 - 设定三个状态 `PENDING、FULFILLED、REJECTED` ，只能由`PENDING`改变为`FULFILLED、REJECTED`，并且只能改变一次
 - `MyPromise`接收一个函数`executor`，`executor`有两个参数`resolve`方法和`reject`方法
 - `resolve`将`PENDING`改变为`FULFILLED`
-- `reject`将`PENDING`改变为`FULFILLED`
+- `reject`将`PENDING`改变为`REJECTED`
 - `promise`变为`FULFILLED`状态后具有一个唯一的`value`
 - `promise`变为`REJECTED`状态后具有一个唯一的`reason`
 
