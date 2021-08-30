@@ -8,7 +8,7 @@
 - 设定三个状态 `PENDING、FULFILLED、REJECTED` ，只能由`PENDING`改变为`FULFILLED、REJECTED`，并且只能改变一次
 - `MyPromise`接收一个函数`executor`，`executor`有两个参数`resolve`方法和`reject`方法
 - `resolve`将`PENDING`改变为`FULFILLED`
-- `reject`将`PENDING`改变为`FULFILLED`
+- `reject`将`PENDING`改变为`REJECTED`
 - `promise`变为`FULFILLED`状态后具有一个唯一的`value`
 - `promise`变为`REJECTED`状态后具有一个唯一的`reason`
 
@@ -93,7 +93,7 @@
           onFulfilled(this.value);
           break;
         case REJECTED:
-          onFulfilled(this.value);
+          onRejected(this.reason);
           break;
         case PENDING:
           this.onFulfilledCallbacks.push(() => {
@@ -269,7 +269,7 @@ MyPromise.prototype.finally = function(fn) {
 `Promise.resolve`用来生成一个直接处于`FULFILLED`状态的Promise。
 
 ```js
-MyPromise.reject = function(value) {
+MyPromise.resolve = function(value) {
   return new MyPromise((resolve, reject) => {
     resolve(value);
   });
@@ -295,7 +295,7 @@ MyPromise.reject = function(reason) {
 
 ```js
     MyPromise.all = function (promises) {
-      return new Promise((resolve, reject) => {
+      return new MyPromise((resolve, reject) => {
         if (promises.length === 0) {
           resolve([]);
         } else {
@@ -325,11 +325,10 @@ MyPromise.reject = function(reason) {
 
 ```js
     MyPromise.race = function (promises) {
-      return new Promise((resolve, reject) => {
+      return new MyPromise((resolve, reject) => {
         if (promises.length === 0) {
           resolve();
         } else {
-          let index = 0;
           for (let i = 0; i < promises.length; i++) {
             promises[i].then(data => {
               resolve(data);
