@@ -1,0 +1,42 @@
+---
+{
+  "title": "矩形覆盖",
+}
+---
+
+## 题目
+
+我们可以用`2*1`的小矩形横着或者竖着去覆盖更大的矩形。请问用n个`2*1`的小矩形无重叠地覆盖一个`2*n`的大矩形，总共有多少种方法？
+
+
+假设有8个块
+
+第1块竖着放，后面还剩`7`块，共`f(7)`种方法。
+
+第1块横着放，后面还剩`6`块，共`f(6)`种方法。
+
+即`f(8)=f(6)+f(7)`
+
+`f(n)=f(n-1)+f(n-2)`
+
+<img src="/矩形覆盖.png" alt="foo">
+
+
+```js
+function rectCover(n)
+{
+    if(n<=2){
+        return n;
+    }
+    let i = 2;
+    let pre = 1;
+    let current = 2;
+    let result = 0;
+    while(i++ < n){
+        result = pre + current;
+        pre = current;
+        current = result;
+    }
+    return result;
+}
+```

@@ -1,0 +1,57 @@
+---
+{
+  "title": "字符串翻转",
+}
+---
+
+## 题目1-翻转单词顺序
+
+输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。为简单起见，标点符号和普通字母一样处理。例如输入字符串`"I am a student."`，则输出`"student. a am I"`。
+
+## 代码
+
+直接调用数组`API`进行翻转，没啥好讲的。
+
+```js
+function ReverseSentence(str)
+{
+    if(!str){return ''}
+    return str.split(' ').reverse().join(' ');
+}
+```
+
+## 题目2-左旋转字符串
+
+字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。请定义一个函数实现字符串左旋转操作的功能。比如输入字符串`"abcdefg"`和数字`2`，该函数将返回左旋转2位得到的结果`"cdefgab"`。
+
+## 代码
+
+将两个`str`进行拼接，直接从第`n`位开始截取，就相当于将前面`n`个数字移到末尾。
+
+```js
+function LeftRotateString(str, n)
+{
+    if(str&&n!=null){
+       return (str+str).substr(n,str.length)
+    }else{
+        return ''
+    }
+}
+```
+## 剑指offer中的思路
+
+上面两个问题都可以用简单的方法解决，《剑指offer》中的解法稍微有些复杂，我不推荐用，但是思路可以参考下：
+
+### 翻转单词顺序：
+
+- 第一步将整个字符串翻转，`"I am a student."` -> `".tneduts a ma I"`
+
+- 第二步将字符串内的单个字符串进行翻转：`".tneduts a ma I"` -> `"student. a am I"`
+
+### 左旋转字符串：
+
+以`"abcdefg"`为例，将字符串分为两部分`ab`和`cdefg`
+
+将两部分分别进行翻转，得到 -> `"bagfedc"`
+
+再将整个字符串进行翻转，得到 ->  `"cdefgab"`

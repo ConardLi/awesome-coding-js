@@ -1,0 +1,75 @@
+---
+{
+  "title": "字符流中第一个不重复的字符",
+}
+---
+
+## 题目
+
+请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符"go"时，第一个只出现一次的字符是"g"。
+当从该字符流中读出前六个字符“google"时，第一个只出现一次的字符是"l"。
+
+如果当前字符流没有存在出现一次的字符，返回#字符。
+
+## 思路
+
+要求获得第一个只出现一次的。
+
+~~使用一个有序的存储结构为每个字符计数，再遍历这个对象，第一个出现次数为1的即为结果。~~
+
+~~在JavaScript中有序存储空间选择对象即可。~~
+
+上述解决办法是有问题的，因为在`JavaScript`中对象遍历并不是在所有浏览器中的实现都是有序的，而且直接使用对象存储，当字符流中出现数字时也是有问题的。
+
+所以下面改用剑指offer中的解法：
+
+- 创建一个长度为`256`的数组`container`来标记字符流中字符出现的次数
+
+- 使用字符`ASCII`码作为下标，这样数组长度最大为`256`
+
+- 当字符没有出现过，标记为`-1`
+
+- 当字符只出现一次，标记为字符在字符流中的位置`index`
+
+- 当字符出现多次时，标记为`-2`
+
+- 当调用`FirstAppearingOnce`时，只需要找到，数组值大于`-1`的且值最小的位置索引，即为第一个出现次数为`1`的字符
+
+
+
+## 代码
+
+```js
+    let container = new Array(256).fill(-1);
+    let index = 0;
+    function Init() {
+      container = new Array(256).fill(-1);
+      index = 0;
+    }
+    function Insert(ch) {
+      const code = ch.charCodeAt(0);
+      if (container[code] === -1) {
+        container[code] = index;
+      } else if (container[code] >= 0) {
+        container[code] = -2;
+      }
+      index++;
+    }
+    function FirstAppearingOnce() {
+      let minIndex = 256;
+      let strIndex = 0;
+      for (let i = 0; i < 256; i++) {
+        if (container[i] >= 0 && container[i] < minIndex) {
+          minIndex = container[i];
+          strIndex = i;
+        }
+      }
+      return minIndex === 256 ? '#' : String.fromCharCode(strIndex);
+    }
+```
+
+
+## 考察点
+
+- 字符串
+- hash

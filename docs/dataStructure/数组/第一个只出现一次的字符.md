@@ -1,0 +1,69 @@
+---
+{
+  "title": "第一个只出现一次的字符",
+}
+---
+
+## 题目
+
+在一个字符串(`0<=字符串长度<=10000`，全部由字母组成)中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回` -1`（需要区分大小写）。
+
+## 思路
+
+### 思路1:
+
+用一个`map`存储每个字符出现的字数
+
+第一次循环存储次数，第二次循环找到第一个出现一次的字符。
+
+时间复杂度`O(n)`、空间复杂度`O(n)`
+
+### 思路二：
+
+使用`js`的`array`提供的`indexOf`和`lastIndexOf`方法
+
+遍历字符串，比较每个字符第一次和最后一次出现的位置是否相同。
+
+`indexOf`的时间复杂度为`O(n)`，所以整体的时间复杂度为O(n<sup>2</sup>)，空间复杂度为`0`。
+
+## 代码
+
+### 思路1:
+```js
+    function FirstNotRepeatingChar(str) {
+      if (!str) {
+        return -1;
+      }
+      let countMap = {};
+      const array = str.split('');
+      const length = str.length;
+      for (let i = 0; i < length; i++) {
+        const current = array[i];
+        let count = countMap[current];
+        if (count) {
+          countMap[current] = count + 1;
+        } else {
+          countMap[current] = 1;
+        }
+      }
+      for (let i = 0; i < length; i++) {
+        if (countMap[array[i]] === 1) {
+          return i;
+        }
+      }
+      return -1;
+    }
+```
+
+### 思路二：
+```js
+    function FirstNotRepeatingChar(str) {
+      // write code here
+      for (var i = 0; i < str.length; i++) {
+        if (str.indexOf(str[i]) == str.lastIndexOf(str[i])) {
+          return i;
+        }
+      }
+      return -1;
+    }
+```

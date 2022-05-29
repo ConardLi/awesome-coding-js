@@ -1,0 +1,83 @@
+---
+{
+  "title": "用两个栈实现队列",
+}
+---
+
+
+## 题目
+
+用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+
+## 思路
+
+**栈1:**
+
+用于入队列存储
+
+**栈2:**
+
+出队列时将栈1的数据依次出栈，并入栈到栈2中
+
+栈2出栈即栈1的底部数据即队列要出的数据。
+
+**注意:**
+
+栈2为空才能补充栈1的数据，否则会打乱当前的顺序。
+
+<img src="/queue.png" alt="foo">
+
+
+## 代码
+
+
+```js
+const stack1 = [];
+const stack2 = [];
+
+function push(node)
+{
+    stack1.push(node);
+}
+function pop()
+{
+    if(stack2.length === 0){
+       while(stack1.length>0){
+        stack2.push(stack1.pop());
+       }
+    }
+    return stack2.pop() || null;
+}
+```
+
+
+## 扩展：用两个队列实现一个栈
+
+```js
+    const queue1 = []
+    const queue2 = []
+
+    function push(x) {
+      if (queue1.length === 0) {
+        queue1.push(x)
+
+        while (queue2.length) {
+          queue1.push(queue2.shift())
+        }
+      } else if (queue2.length === 0) {
+        queue2.push(x)
+
+        while (queue1.length) {
+          queue2.push(queue1.shift())
+        }
+      }
+    };
+
+    function pop() {
+      if (queue1.length !== 0) {
+        return queue1.shift()
+      } else {
+        return queue2.shift()
+      }
+    };
+```

@@ -1,0 +1,38 @@
+---
+{
+  "title": "把数组排成最小的数",
+}
+---
+
+## 题目
+
+输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+
+例如输入数组`{3，32，321}`，则打印出这三个数字能排成的最小数字为`321323`。
+
+## 思路
+
+定义一种新的排序规则，将整个数组重新排序：
+
+`a`和`b`两个数字可以有两种组合：`ab`和`ba`，若`ab<ba`则`ab`应该排在`ba`前面，否则`ab`应该排在`ba`后面。
+
+使用数组的`sort`方法，底层是快排，也可以手写一个快排。
+
+> `sort`方法接收一个比较函数，`compareFunction`：如果 `compareFunction(a, b)` 小于 `0` ，那么 `a` 会被排列到 `b` 之前；
+
+## 代码
+
+```js
+    function PrintMinNumber(numbers) {
+      if (!numbers || numbers.length === 0) {
+        return "";
+      }
+      return numbers.sort(compare).join('');
+    }
+
+    function compare(a, b) {
+      const front = "" + a + b;
+      const behind = "" + b + a;
+      return front - behind;
+    }
+```

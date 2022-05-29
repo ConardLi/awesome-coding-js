@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "awesome-coding-js",
+  "version": "0.4.1",
+  "scripts": {
+    "dev": "vuepress dev docs --temp .temp",
+    "build": "npm i vuepress & npx vuepress build docs --temp .temp",
+    "buildt": "vuepress build docs --temp .temp"
+  },
+  "dependencies": {
+    "vuepress": "^1.9.7",
+    "vuepress-theme-vt": "0.4.1"
+  },
+  "description": "{{ description }}",
+  "author": "{{ username }} <{{ email }}>"
+}
