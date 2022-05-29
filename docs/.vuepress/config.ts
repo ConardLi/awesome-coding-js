@@ -4,6 +4,7 @@ import { defineConfig4CustomTheme } from "vuepress/config";
 export = defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
   theme: "vt",
   title: "awesome-coding-js",
+  base:"/docs",
   themeConfig: {
     enableDarkMode: true,
     repo: "https://github.com/ConardLi/awesome-coding-js",
