@@ -12,10 +12,6 @@
 
 为了更好的阅读体验可以到：http://www.conardli.top/ 阅读。
 
-<a href="http://www.conardli.top/" class="item" >
-  <img src="./dist/img/logo.png" width="550px"  />
-</a>
-
 - ⭐⭐：入门
 - ⭐⭐⭐：进阶
 
