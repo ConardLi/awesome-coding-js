@@ -2,7 +2,7 @@
 home: true
 # heroImage: /logo.svg
 actionText: 开始阅读
-actionLink: /guide/
+actionLink: /docs/guide/
 features:
   - title: 数据结构专题
     details: 常见数据结构（二叉树、数组、堆、栈）的基本使用以及典型题目分析。

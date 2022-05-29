@@ -10,7 +10,7 @@
 
 建议做题之前先阅读我这篇文章：[前端该如何准备数据结构和算法](https://juejin.im/post/5d5b307b5188253da24d3cd1)，帮助你更高效的学习。
 
-为了更好的阅读体验可以到：https://www.conardli.top/docs 阅读。
+为了更好的阅读体验可以到：https://www.conardli.top 阅读。
 
 - ⭐⭐：入门
 - ⭐⭐⭐：进阶
