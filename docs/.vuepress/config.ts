@@ -1,7 +1,7 @@
 import { ThemeConfig } from "vuepress-theme-vt";
 import { defineConfig4CustomTheme } from "vuepress/config";
 
-export = defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
+export default defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
   theme: "vt",
   title: "awesome-coding-js",
   themeConfig: {
@@ -220,11 +220,28 @@ export = defineConfig4CustomTheme<ThemeConfig>((ctx) => ({
           },
       ]
   },
-    codeSwitcher: {
+  codeSwitcher: {
       groups: {
         default: { ts: 'TypeScript', js: 'JavaScript' },
         'plugin-usage': { tuple: 'Tuple', object: 'Object' },
       }
     }
   },
+  head: [
+    // 添加百度统计
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2c567a12c7860a8915d6ce4cb17a538e";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+        `
+    ],
+    ['meta', {name: 'referrer', content: 'no-referrer-when-downgrade'}],
+  ],
 }));
